@@ -1,0 +1,132 @@
+.modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  z-index: 9001;
+  left: 0;
+  overflow: auto;
+  opacity: 0;
+  transition: .4s ease-in-out opacity;
+
+  @media (min-width: 900px) {
+    justify-content: center; // firefox fix
+  }
+
+  &.show {
+    opacity: 1;
+    display: flex !important;
+  }
+
+  &.out {
+    opacity: 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    margin: 1rem 0;
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($darkest, .8);
+  z-index: 9000;
+}
+
+.modal-container {
+  margin-top: 2rem;
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px rgba($primary, .5);
+  position: relative;
+  z-index: 10;
+  width: 800px;
+  max-width: 90vw;
+  display: flex;
+  transform: translateY(40px) scale(.9);
+  transition: .3s ease-in-out transform;
+
+  .show & {
+    transform: translateY(0) scale(1);
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+    width: 90vw;
+    left: 5vw;
+    position: absolute;
+    top: 0px;
+  }
+}
+
+.modal-split {
+  flex: 1;
+  border-radius: 4px 0 0 4px;
+  display: flex;
+  align-items: center;
+
+  + .modal-split {
+    border-radius: 0 0 4px 4px;
+  }
+
+  @media (max-width: 900px) {
+    align-items: initial;
+    flex: none;
+  }
+}
+
+.modal-container--header {
+  border-bottom: 1px solid darken($off-white, 10%);
+  text-align: center;
+  background-color: #fff;
+}
+
+.modal-container--inner {
+  padding: 2rem 2rem;
+  max-height: 70vh;
+  overflow: auto;
+  flex: 1;
+
+  @media (max-width: 900px) {
+    max-height: initial;
+  }
+}
+
+.modal-container--footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid darken($off-white, 10%);
+  text-align: center;
+  background-color: #fff;
+}
+
+.modal-close {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+
+  a {
+    color: $base;
+    background-color: $white;
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    text-align: center;
+    line-height: 4rem;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: .2s ease-in-out all;
+    font-size: 2rem;
+    border: 1px solid $base;
+  }
+}

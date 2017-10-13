@@ -1,0 +1,93 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $darkest;
+  line-height: 1.52;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2, .h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+h3, .h3 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h4, .h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h5, .h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h6, .h6 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p, .p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+a, .a {
+  color: $primary;
+  text-decoration: underline;
+
+  &:hover,
+  &:active {
+    color: rgba($primary, .8);
+  }
+}
+
+b, strong {
+  color: $darkest;
+}
+
+ul, ol, dt {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 2rem;
+}
+
+.font-size-small {
+  font-size: 1.2rem;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}

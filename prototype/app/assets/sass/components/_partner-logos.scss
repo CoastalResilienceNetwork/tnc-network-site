@@ -1,0 +1,18 @@
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+
+  > a {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+  }
+
+  img {
+    max-width: 17rem;
+    max-height: 6rem;
+  }
+}

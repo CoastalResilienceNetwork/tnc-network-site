@@ -1,0 +1,13 @@
+{
+    "extends": "airbnb-base/legacy",
+    "env": {
+        "es6": false,
+        "browser": true,
+        "node": true,
+        "mocha": true
+    },
+    "rules": {
+        "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 2 }],
+        "max-statements": [0, 10]
+    }
+}

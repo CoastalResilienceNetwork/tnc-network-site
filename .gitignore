@@ -58,3 +58,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# prototype stuff
+prototype/dist/
+prototype/package-lock.json

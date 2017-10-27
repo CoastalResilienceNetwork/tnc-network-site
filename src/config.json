@@ -1,0 +1,70 @@
+{
+    "initialMapCenter": [39.944558, -75.162605],
+    "initialMapZoom": 3,
+    "baseMapTilesMinZoom": 0,
+    "baseMapTilesMaxZoom": 18,
+    "baseMapTilesUrl": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+    "baseMapTilesAttribution": "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community",
+    "regionList": [
+        {
+            "title": "Global Platform, World Risk, Conservation Atlas",
+            "description": "The Coastal Resilience tools provide support for decision-makers working at national and multi-national scales in assessing where to act in risk reduction, adaptation and conservation. They build from critical resources such as the Global Platform on Risk Reduction, World Risk Report, and Conservation Atlas.",
+            "mapUrl": "https://coastalresilience.org/",
+            "image": "assets/images/locations/globe.svg",
+            "mapCenter": [32.54681317351514, -32.6953125],
+            "mapZoom": 3,
+            "subregions": [
+                {
+                    "title": "United States",
+                    "image": "assets/images/locations/US-Mainland.svg",
+                    "mapUrl": "https://coastalresilience.org/"
+                }
+            ]
+        },
+        {
+            "title": "Caribbean",
+            "description": "The Coastal Resilience tools provide support for decision-makers working at national and multi-national scales in assessing where to act in risk reduction, adaptation and conservation. They build from critical resources such as the Global Platform on Risk Reduction, World Risk Report, and Conservation Atlas.",
+            "mapUrl": "https://coastalresilience.org/",
+            "image": "assets/images/locations/caribbean.svg",
+            "mapCenter": [14.796127603627053, -73.740234375],
+            "mapZoom": 3,
+            "subregions": [
+                {
+                    "title": "United States",
+                    "image": "assets/images/locations/US-Mainland.svg",
+                    "mapUrl": "https://coastalresilience.org/"
+                }
+            ]
+        },
+        {
+            "title": "Mexico and Central America",
+            "description": "The Coastal Resilience tools provide support for decision-makers working at national and multi-national scales in assessing where to act in risk reduction, adaptation and conservation. They build from critical resources such as the Global Platform on Risk Reduction, World Risk Report, and Conservation Atlas.",
+            "mapUrl": "https://coastalresilience.org",
+            "image": "assets/images/locations/mexico-centralAm.svg",
+            "mapCenter": [17.434510551522894, -96.1962890625],
+            "mapZoom": 3,
+            "subregions": [
+                {
+                    "title": "United States",
+                    "image": "assets/images/locations/US-Mainland.svg",
+                    "mapUrl": "https://coastalresilience.org/"
+                }
+            ]
+        },
+        {
+            "title": "United States",
+            "description": "The Coastal Resilience tools provide support for decision-makers working at national and multi-national scales in assessing where to act in risk reduction, adaptation and conservation. They build from critical resources such as the Global Platform on Risk Reduction, World Risk Report, and Conservation Atlas.",
+            "mapUrl": "https://coastalresilience.org",
+            "image": "assets/images/locations/US-Mainland.svg",
+            "mapCenter": [39.30029918615029, -97.119140625],
+            "mapZoom": 3,
+            "subregions": [
+                {
+                    "title": "United States",
+                    "image": "assets/images/locations/US-Mainland.svg",
+                    "mapUrl": "https://coastalresilience.org/"
+                }
+            ]
+        }
+    ]
+}

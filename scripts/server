@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const connect = require('connect');
+const morgan = require('morgan');
+const serveStatic = require('serve-static');
+
+const APP_PORT = 8642;
+const APP_INDEX = 'index.html';
+
+connect()
+    .use(morgan('dev'))  // For cli logging of requests
+    .use(serveStatic(path.resolve(__dirname, '../src'), {
+        'index': [APP_INDEX],
+    }))
+    .listen(APP_PORT, () => {
+        console.log(`Server running on ${APP_PORT} ...`);
+    });

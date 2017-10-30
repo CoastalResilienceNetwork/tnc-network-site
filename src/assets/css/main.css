@@ -984,6 +984,10 @@ ul {
     overflow: hidden
 }
 
+#map.full-height {
+    position: unset !important;
+}
+
 .map-inner {
     -ms-flex: 1;
     flex: 1;
@@ -1234,7 +1238,13 @@ ul {
     display: -ms-flexbox;
     display: flex;
     padding: 1rem;
-    background-color: #334a51
+    background-color: #334a51;
+    transform: translateY(0);
+    transition: transform 0.55s ease-in-out;
+}
+
+.stats.slideout {
+    transform: translateY(100%);
 }
 
 @media (max-width:900px) {

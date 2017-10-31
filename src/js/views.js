@@ -6,9 +6,13 @@ var _ = window._;
 var Backbone = window.Backbone;
 
 window.MapView = Backbone.View.extend({
-    initialize: function() {
+    el: '#map',
+
+    initialize: function(options) {
         this.map = null;
+        this.slideOutStatsRegion = options.slideOutStatsRegion;
         this.listenTo(this.model, 'change:selectedRegion', this.panBaseMap);
+        this.listenToOnce(this.model, 'change:statsVisible', this.resetMapSize);
     },
 
     render: function() {
@@ -25,6 +29,7 @@ window.MapView = Backbone.View.extend({
         }).addTo(map);
 
         this.map = map;
+        this.map.once('moveend', this.slideOutStatsRegion);
 
         return this;
     },
@@ -39,6 +44,13 @@ window.MapView = Backbone.View.extend({
             this.model.get('initialMapZoom');
 
         this.map.flyTo(newCenter, newZoom);
+    },
+
+    resetMapSize: function() {
+        var animate = true;
+        if (this.map) {
+            this.map.invalidateSize(animate);
+        }
     },
 });
 

@@ -200,16 +200,13 @@
             <p class="location--description">
                 <%= description %>
             </p>
-            <a href="<% mapUrl %>" class="btn btn-primary">
-                Open map
-            </a>
             <% _.each(subregions, function(sr) { %>
                 <div class="location">
                     <div class="location--title">
                         <%= sr.title %>
                     </div>
                     <img src="<%= sr.image %>" alt="location background image">
-                    <a href="<%= sr.mapUrl %>" class="hide-desktop">
+                    <a href="<%= sr.mapUrl %>">
                         <span class="sr-only">
                             Open map
                         </span>

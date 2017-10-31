@@ -17,6 +17,7 @@ window.AppModel = Backbone.Model.extend({
     url: 'config.json',
 
     defaults: {
+        statsVisible: true,
         detailsVisible: false,
         selectedRegion: null,
         initialMapCenter: null,

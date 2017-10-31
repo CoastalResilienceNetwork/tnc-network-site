@@ -984,6 +984,10 @@ ul {
     overflow: hidden
 }
 
+#map.full-height {
+    position: unset !important;
+}
+
 .map-inner {
     -ms-flex: 1;
     flex: 1;
@@ -1014,16 +1018,16 @@ ul {
     bottom: 1.5rem;
     box-shadow: 0 2px 2px 0 rgba(51, 74, 81, .2);
     border-radius: 2rem;
-    width: 3rem;
+    width: 2rem;
     max-width: 20rem;
-    height: 3rem;
+    height: 2rem;
     white-space: nowrap;
     background: #fff;
     text-indent: 9999rem;
     font-size: 1rem;
     padding: 1rem;
     background-image: url(../../assets/images/info-icon.svg);
-    background-size: 1.5rem;
+    background-size: 1.2rem;
     background-position: 50%;
     background-repeat: no-repeat
 }
@@ -1234,7 +1238,13 @@ ul {
     display: -ms-flexbox;
     display: flex;
     padding: 1rem;
-    background-color: #334a51
+    background-color: #334a51;
+    transform: translateY(0);
+    transition: transform 0.55s ease-in-out;
+}
+
+.stats.slideout {
+    transform: translateY(100%);
 }
 
 @media (max-width:900px) {

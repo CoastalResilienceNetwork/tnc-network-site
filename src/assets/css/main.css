@@ -1233,11 +1233,11 @@ ul {
 }
 
 .stats {
-    -ms-flex: .5;
-    flex: .5;
+    -ms-flex: .28;
+    flex: .28;
     display: -ms-flexbox;
     display: flex;
-    padding: 1rem;
+    padding: .7rem;
     background-color: #334a51;
     transform: translateY(0);
     transition: transform 0.55s ease-in-out;
@@ -1263,7 +1263,7 @@ ul {
     flex-wrap: wrap;
     background-color: #405d68;
     border-radius: 5px;
-    padding: 1rem
+    padding: .5rem
 }
 
 @media (max-width:900px) {
@@ -1311,11 +1311,17 @@ ul {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.2rem;
-    margin: 10px 0 0
+    margin: 0;
+}
+
+@media (max-width:900px) {
+    .stat--label {
+        margin-top: 1rem;
+    }
 }
 
 .stat--total {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1.1
 }
 

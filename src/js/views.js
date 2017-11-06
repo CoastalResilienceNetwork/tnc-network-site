@@ -28,6 +28,11 @@ window.MapView = Backbone.View.extend({
             ext: 'png',
         }).addTo(map);
 
+        L.esri.dynamicMapLayer({
+            url: this.model.get('regionLayerUrl'),
+            opacity: this.model.get('regionLayerOpacity'),
+        }).addTo(map);
+
         this.map = map;
         this.map.once('moveend', this.slideOutStatsRegion);
 

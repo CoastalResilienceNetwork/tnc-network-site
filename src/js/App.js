@@ -7,6 +7,7 @@ var MapView = window.MapView;
 var RegionListView = window.RegionListView;
 var RegionDetailsView = window.RegionDetailsView;
 var StatsView = window.StatsView;
+var PartnerModalView = window.PartnerModalView;
 
 window.App = Backbone.View.extend({
     initialize: function() {
@@ -14,6 +15,7 @@ window.App = Backbone.View.extend({
         this.regionListView = null;
         this.regionDetailsView = null;
         this.statsView = null;
+        this.partnerModalView = null;
 
         this.emptyDetailsView = this.emptyDetailsView.bind(this);
         this.fadeInListView = this.fadeInListView.bind(this);
@@ -26,6 +28,7 @@ window.App = Backbone.View.extend({
         this.listenToOnce(this.model, 'change:baseMapTilesUrl', this.createMapView);
         this.listenToOnce(this.model, 'change:detailsVisible', this.slideOutStatsRegion);
         this.listenToOnce(this.model, 'change:statsList', this.createStatsView);
+        this.listenToOnce(this.model, 'change:partnerModalLinks', this.createPartnerModalView);
 
         this.model.fetch();
         this.render();
@@ -51,6 +54,11 @@ window.App = Backbone.View.extend({
     createStatsView: function() {
         this.statsView = new StatsView({ model: this.model });
         this.statsView.render();
+    },
+
+    createPartnerModalView: function() {
+        this.partnerModalView = new PartnerModalView({ model: this.model });
+        this.partnerModalView.render();
     },
 
     emptyDetailsView: function() {

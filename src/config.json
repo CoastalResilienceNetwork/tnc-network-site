@@ -169,5 +169,77 @@
             "secondaryLabel": "Decision support tools",
             "description": "implemented for restoration and conservation efforts"
         }
+    ],
+    "partnerModalLinks": [
+        {
+            "partner": "ASFPM",
+            "url": "http://www.floods.org/",
+            "image": "ASFPM-Logo-full-color.jpg"
+        },
+        {
+            "partner": "Azavea",
+            "url": "https://www.azavea.com/",
+            "image": "azavea-logo.png"
+        },
+        {
+            "partner": "CISR",
+            "url": "#",
+            "image": "cisr_logo.png"
+        },
+        {
+            "partner": "Esri",
+            "url": "https://www.esri.com/",
+            "image": "esri-10GlobeLogo_sRGBflat300.jpg"
+        },
+        {
+            "partner": "GDPC",
+            "url": "http://www.preparecenter.org/",
+            "image": "GDPC Logo Final CMYK.jpg"
+        },
+        {
+            "partner": "IFRC",
+            "url": "http://www.ifrc.org/",
+            "image": "IFRC.jpeg"
+        },
+        {
+            "partner": "Microsoft",
+            "url": "https://www.microsoft.com/",
+            "image": "msft.jpg"
+        },
+        {
+            "partner": "Natural Capital Project",
+            "url": "https://www.naturalcapitalproject.org/",
+            "image": "NatCapLogo.png"
+        },
+        {
+            "partner": "NOAA",
+            "url": "http://www.noaa.gov/",
+            "image": "NOAA_logo_color_broadcast2.jpg"
+        },
+        {
+            "partner": "SpatialDev",
+            "url": "http://spatialdev.com/",
+            "image": "SpatialDev.jpeg"
+        },
+        {
+            "partner": "The Nature Conservancy",
+            "url": "https://www.nature.org/",
+            "image": "TNCLogoPrimary_RGB2.jpg"
+        },
+        {
+            "partner": "UNU",
+            "url": "https://ehs.unu.edu/",
+            "image": "UNU-EHS_3c.jpg"
+        },
+        {
+            "partner": "USGS",
+            "url": "https://www.usgs.gov/",
+            "image": "USGSlogo.jpg"
+        },
+        {
+            "partner": "USM",
+            "url": "https://home.usm.edu/",
+            "image": "usm_logo.png"
+        }
     ]
 }

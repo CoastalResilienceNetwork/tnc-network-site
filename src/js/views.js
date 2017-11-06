@@ -203,3 +203,17 @@ window.StatsView = Backbone.View.extend({
         return this;
     },
 });
+
+window.PartnerModalView = Backbone.View.extend({
+    el: '#partner-modal-region',
+
+    template: _.template($('#partnerModalViewTemplate').html()),
+
+    render: function() {
+        this.$el.html(this.template({
+            partnerLinks: this.model.get('partnerModalLinks'),
+        }));
+
+        return this;
+    }
+});

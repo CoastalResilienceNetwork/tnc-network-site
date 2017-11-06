@@ -19,6 +19,7 @@ window.AppModel = Backbone.Model.extend({
     defaults: {
         statsVisible: true,
         statsList: null,
+        partnerModalLinks: null,
         detailsVisible: false,
         selectedRegion: null,
         initialMapCenter: null,

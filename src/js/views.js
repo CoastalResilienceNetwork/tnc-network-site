@@ -176,3 +176,30 @@ window.RegionDetailsView = Backbone.View.extend({
     },
 });
 
+window.StatsView = Backbone.View.extend({
+    el: '#stats-region',
+
+    template: _.template($('#statsViewTemplate').html()),
+
+    render: function() {
+        var statsList = this.model.get('statsList');
+        // To ensure the app always shows 3 and only 3 stat items, take the
+        // first three configured stat items if the number's >= 3; if there are
+        // fewer than 3 configured stat items, add up to 3 placeholders.
+        var statItems = statsList.length >= 3 ? _.take(statsList, 3) :
+            statsList.concat(_.map(_.range(statsList.length, 3), function() {
+                return {
+                    label: 'Label',
+                    stat: 1,
+                    secondaryLabel: 'secondaryLabel',
+                    description: 'description',
+                };
+            }));
+
+        this.$el.html(this.template({
+            statItems: statItems,
+        }));
+
+        return this;
+    },
+});

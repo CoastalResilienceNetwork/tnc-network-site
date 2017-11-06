@@ -149,5 +149,25 @@
                 }
             ]
         }
+    ],
+    "statsList": [
+        {
+            "label": "Engagement",
+            "stat": 100,
+            "secondaryLabel": "Communities",
+            "description": "across 11 countries trained in Coastal resilience action"
+        },
+        {
+            "label": "Awareness",
+            "stat": 90,
+            "secondaryLabel": "Publications",
+            "description": "making the case for nature–based solutions that reduce risk"
+        },
+        {
+            "label": "Action",
+            "stat": 25,
+            "secondaryLabel": "Decision support tools",
+            "description": "implemented for restoration and conservation efforts"
+        }
     ]
 }

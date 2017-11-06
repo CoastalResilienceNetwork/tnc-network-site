@@ -41,20 +41,20 @@ window.AppModel = Backbone.Model.extend({
             detailsVisible: false,
             selectedRegion: null,
         });
-        return _.noop;
+        return _.noop();
     },
 
     showDetails: function(regionName) {
         var selectedRegion = null;
 
         if (!regionName) {
-            return _.noop;
+            return _.noop();
         }
 
         selectedRegion = _.findWhere(this.get('regionList'), { title: regionName });
 
         if (!selectedRegion) {
-            return _.noop;
+            return _.noop();
         }
 
         this.set({
@@ -62,6 +62,6 @@ window.AppModel = Backbone.Model.extend({
             detailsVisible: true,
         });
 
-        return _.noop;
+        return _.noop();
     },
 });

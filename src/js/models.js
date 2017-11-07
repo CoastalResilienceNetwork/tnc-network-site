@@ -27,6 +27,8 @@ window.AppModel = Backbone.Model.extend({
         baseMapTilesUrl: null,
         baseMapTilesAttribution: null,
         regionList: null,
+        regionLayerUrl: null,
+        regionLayerOpacity: null,
     },
 
     initialize: function() {

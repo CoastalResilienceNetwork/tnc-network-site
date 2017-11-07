@@ -1043,6 +1043,36 @@ ul {
     border-radius: 4px
 }
 
+.leaflet-selectedMarker-pane {
+    z-index: 800;
+}
+
+.leaflet-popup-content {
+    max-width: 250px;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 5px;
+    border: 2px solid #80be45;
+}
+
+.leaflet-popup-tip-container {
+    display: none;
+}
+
+.marker-popup strong {
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+.marker-popup a {
+    margin: 0 auto 35px auto;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    width: 92px;
+}
+
 .modal {
     position: fixed;
     display: none;

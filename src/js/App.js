@@ -136,15 +136,15 @@ window.App = Backbone.View.extend({
 
     slideOutStatsRegion: function() {
         var self = this;
-
-        if (this.statsView.$el && this.mapView.$el) {
-            this.statsView.$el.addClass('slideout');
-            this.mapView.$el.addClass('full-height');
-            _.delay(function() {
-                self.statsView.$el.hide();
-                self.model.set('statsVisible', false);
-                self.statsView.$el.empty();
-            }, 500);
+        if (this.statsView.$el) {
+            $('#stats-slideout-region').slideToggle({
+                duration: 'slow',
+                easing: 'swing',
+                complete: function() {
+                    self.statsView.$el.hide();
+                    self.statsView.$el.empty();
+                }
+            });
         }
     }
 });

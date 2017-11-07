@@ -7,3 +7,16 @@ install:
 
 script:
     - ./scripts/lint
+
+before_deploy:
+    - ./scripts/cibuild
+
+deploy:
+    provider: releases
+    api_key:
+        secure: $GITHUB_TOKEN
+    file: 'tnc-network-site-${TRAVIS-TAG}.zip'
+    skip-cleanup: true
+    on:
+        tags: true
+        repo: CoastalResilienceNetwork/tnc-network-site

@@ -82,54 +82,19 @@
                     </p>
                 </div>
             </div>
-            <div class="modal-split">
-                <div class="modal-container--inner partner-logos">
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/ASFPM-Logo-full-color.jpg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/azavea-logo.png" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/cisr_logo.png" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/esri-10GlobeLogo_sRGBflat300.jpg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/GDPC Logo Final CMYK.jpg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/IFRC.jpeg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/msft.jpg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/NatCapLogo.png" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/NOAA_logo_color_broadcast2.jpg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/SpatialDev.jpeg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/TNCLogoPrimary_RGB2.jpg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/UNU-EHS_3c.jpg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/USGSlogo.jpg" alt="">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="assets/images/partners/usm_logo.png" alt="">
-                    </a>
-                </div>
-            </div>
+            <div class="modal-split" id="partner-modal-region"></div>
         </div>
     </div>
+
+    <script type="text/template" id="partnerModalViewTemplate">
+        <div class="modal-container--inner partner-logos">
+            <% _.each(partnerLinks, function(partnerLinkItem) { %>
+                <a href="<%= partnerLinkItem.url %>" target="_blank">
+                    <img src="assets/images/partners/<%= partnerLinkItem.image %>" alt="<%= partnerLinkItem.partner %>">
+                </a>
+            <% }) %>
+        </div>
+    </script>
 
     <script type="text/template" id="statsViewTemplate">
         <div class="stats--inner">

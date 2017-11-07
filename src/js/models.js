@@ -17,7 +17,6 @@ window.AppModel = Backbone.Model.extend({
     url: 'config.json',
 
     defaults: {
-        statsVisible: true,
         statsList: null,
         partnerModalLinks: null,
         detailsVisible: false,

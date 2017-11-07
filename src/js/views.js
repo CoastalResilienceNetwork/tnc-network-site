@@ -23,7 +23,6 @@ window.MapView = Backbone.View.extend({
         this.slideOutStatsRegion = options.slideOutStatsRegion;
         this.listenTo(this.model, 'change:selectedRegion', this.panBaseMap);
         this.listenTo(this.model, 'change:selectedRegion', this.updateMarkers);
-        this.listenToOnce(this.model, 'change:statsVisible', this.resetMapSize);
         this.markers = L.layerGroup();
 
         // Custom icon for markers
@@ -68,13 +67,6 @@ window.MapView = Backbone.View.extend({
             this.model.get('initialMapZoom');
 
         this.map.flyTo(newCenter, newZoom);
-    },
-
-    resetMapSize: function() {
-        var animate = true;
-        if (this.map) {
-            this.map.invalidateSize(animate);
-        }
     },
 
     updateMarkers: function() {

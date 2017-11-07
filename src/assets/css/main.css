@@ -939,6 +939,7 @@ ul {
     position: absolute;
     right: 2rem;
     width: 4rem;
+    top: 1.5rem;
     height: 4rem;
     border-radius: 50%;
     cursor: pointer;

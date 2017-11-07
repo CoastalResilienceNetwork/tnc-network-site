@@ -55,49 +55,7 @@
         </div>
         <div class="data-container">
             <div class="map-inner" id="map"></div>
-            <div class="stats" id="stats-region">
-                <div class="stats--inner">
-                    <div class="stat--section">
-                        <div class="stat--label">
-                            Engagement
-                        </div>
-                        <div class="stat--total">
-                            100 <span>
-                                    Communities
-                            </span>
-                        </div>
-                        <div class="stat--info">
-                            across 11 countries trained in Coastal resilience action
-                        </div>
-                    </div>
-                    <div class="stat--section">
-                        <div class="stat--label">
-                            Awareness
-                        </div>
-                        <div class="stat--total">
-                            90 <span>
-                                    Publications
-                            </span>
-                        </div>
-                        <div class="stat--info">
-                            making the case for nature–based solutions that reduce risk
-                        </div>
-                    </div>
-                    <div class="stat--section">
-                        <div class="stat--label">
-                            Action
-                        </div>
-                        <div class="stat--total">
-                            25 <span>
-                                    Decision support tools
-                            </span>
-                        </div>
-                        <div class="stat--info">
-                            implemented for restoration and conservation efforts
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="stats" id="stats-region"></div>
         </div>
     </div>
     <div id="app-modal-view"></div>
@@ -172,6 +130,26 @@
             </div>
         </div>
     </div>
+
+    <script type="text/template" id="statsViewTemplate">
+        <div class="stats--inner">
+            <% _.each(statItems, function(statItem) { %>
+                <div class="stat--section">
+                    <div class="stat--label">
+                        <%= statItem.label %>
+                    </div>
+                    <div class="stat--total">
+                        <%= statItem.stat %> <span>
+                            <%= statItem.secondaryLabel %>
+                        </span>
+                    </div>
+                    <div class="stat--info">
+                        <%= statItem.description %>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </script>
 
     <script type="text/template" id="regionListTemplate">
         <div class="location--list" id="region-location-list">

@@ -6,13 +6,14 @@ var Backbone = window.Backbone;
 var MapView = window.MapView;
 var RegionListView = window.RegionListView;
 var RegionDetailsView = window.RegionDetailsView;
+var StatsView = window.StatsView;
 
 window.App = Backbone.View.extend({
     initialize: function() {
         this.mapView = null;
         this.regionListView = null;
         this.regionDetailsView = null;
-        this.$statsRegion = $('.stats');
+        this.statsView = null;
 
         this.emptyDetailsView = this.emptyDetailsView.bind(this);
         this.fadeInListView = this.fadeInListView.bind(this);
@@ -24,6 +25,7 @@ window.App = Backbone.View.extend({
         this.listenToOnce(this.model, 'change:regionList', this.createRegionList);
         this.listenToOnce(this.model, 'change:baseMapTilesUrl', this.createMapView);
         this.listenToOnce(this.model, 'change:detailsVisible', this.slideOutStatsRegion);
+        this.listenToOnce(this.model, 'change:statsList', this.createStatsView);
 
         this.model.fetch();
         this.render();
@@ -44,6 +46,11 @@ window.App = Backbone.View.extend({
     createRegionList: function() {
         this.regionListView = new RegionListView({ model: this.model });
         this.regionListView.render();
+    },
+
+    createStatsView: function() {
+        this.statsView = new StatsView({ model: this.model });
+        this.statsView.render();
     },
 
     emptyDetailsView: function() {
@@ -120,15 +127,15 @@ window.App = Backbone.View.extend({
     },
 
     slideOutStatsRegion: function() {
-        var $statsRegion = this.$statsRegion;
-        var model = this.model;
+        var self = this;
 
-        if ($statsRegion && this.mapView.$el) {
-            $statsRegion.addClass('slideout');
+        if (this.statsView.$el && this.mapView.$el) {
+            this.statsView.$el.addClass('slideout');
             this.mapView.$el.addClass('full-height');
             _.delay(function() {
-                $statsRegion.hide();
-                model.set('statsVisible', false);
+                self.statsView.$el.hide();
+                self.model.set('statsVisible', false);
+                self.statsView.$el.empty();
             }, 500);
         }
     }

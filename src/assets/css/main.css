@@ -939,6 +939,7 @@ ul {
     position: absolute;
     right: 2rem;
     width: 4rem;
+    top: 1.5rem;
     height: 4rem;
     border-radius: 50%;
     cursor: pointer;
@@ -982,10 +983,6 @@ ul {
     -ms-flex-direction: column;
     flex-direction: column;
     overflow: hidden
-}
-
-#map.full-height {
-    position: unset !important;
 }
 
 .map-inner {
@@ -1040,6 +1037,36 @@ ul {
     height: auto;
     background-image: none;
     border-radius: 4px
+}
+
+.leaflet-selectedMarker-pane {
+    z-index: 800;
+}
+
+.leaflet-popup-content {
+    max-width: 250px;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 5px;
+    border: 2px solid #80be45;
+}
+
+.leaflet-popup-tip-container {
+    display: none;
+}
+
+.marker-popup strong {
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+.marker-popup a {
+    margin: 0 auto 35px auto;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    width: 92px;
 }
 
 .modal {
@@ -1233,18 +1260,12 @@ ul {
 }
 
 .stats {
-    -ms-flex: .5;
-    flex: .5;
+    -ms-flex: .28;
+    flex: .28;
     display: -ms-flexbox;
     display: flex;
-    padding: 1rem;
+    padding: .7rem;
     background-color: #334a51;
-    transform: translateY(0);
-    transition: transform 0.55s ease-in-out;
-}
-
-.stats.slideout {
-    transform: translateY(100%);
 }
 
 @media (max-width:900px) {
@@ -1263,7 +1284,7 @@ ul {
     flex-wrap: wrap;
     background-color: #405d68;
     border-radius: 5px;
-    padding: 1rem
+    padding: .5rem
 }
 
 @media (max-width:900px) {
@@ -1311,11 +1332,17 @@ ul {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.2rem;
-    margin: 10px 0 0
+    margin: 0;
+}
+
+@media (max-width:900px) {
+    .stat--label {
+        margin-top: 1rem;
+    }
 }
 
 .stat--total {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1.1
 }
 

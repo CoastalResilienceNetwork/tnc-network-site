@@ -1,6 +1,6 @@
 {
   "name": "tnc-network-site",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "\"TNC Network Site\"",
   "main": "index.js",
   "scripts": {

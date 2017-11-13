@@ -1,6 +1,6 @@
 {
-    "initialMapCenter": [39.9445, -75.1626],
-    "initialMapZoom": 3,
+    "initialMapCenter": [15.00, -3.00],
+    "initialMapZoom": 2,
     "baseMapTilesMinZoom": 0,
     "baseMapTilesMaxZoom": 18,
     "baseMapTilesUrl": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
@@ -9,17 +9,25 @@
     "regionLayerOpacity": 0.8,
     "regionList": [
         {
-            "title": "Global Platform, World Risk, Conservation Atlas",
-            "description": "The Coastal Resilience tools provide support for decision-makers working at national and multi-national scales in assessing where to act in risk reduction, adaptation and conservation. They build from critical resources such as the Global Platform on Risk Reduction, World Risk Report, and Conservation Atlas.",
-            "mapUrl": "https://coastalresilience.org/",
-            "image": "assets/images/locations/globe.svg",
-            "mapCenter": [32.5468, -32.6953],
-            "mapZoom": 3,
+            "title": "Australia",
+            "description": "The nation’s high level of biodiversity classifies it as one of 17 of the ‘megadiversity’ countries in the world, holding roughly two thirds of the world’s biodiversity. Climate adaptation strategies in Australia focus largely on coastal habitat restoration.",
+            "image": "assets/images/locations/australia.svg",
+            "mapCenter": [-30.00, 130.00],
+            "mapZoom": 4,
             "subregions": [
                 {
-                    "title": "Global",
-                    "image": "assets/images/locations/globe.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/global"
+                    "title": "Victoria",
+                    "description": "The temperate southern coast of Australia is home to hundreds of bays and estuaries containing important habitats like shellfish reefs, mangrove forests, seagrass beds and saltmarshes. The Nature Conservancy Australia is working to repair these coastal habitats and restore their critical natural services with a current focus on shellfish reef restoration.",
+                    "image": "assets/images/locations/victoria-australia.svg",
+                    "mapUrl": "http://coastalresilience.org/project/victoria-australia/",
+                    "mapCenter": [-37.81, 144.96]
+                },
+                {
+                    "title": "Western Australia",
+                    "description": "Restoration of marine habitats in the Peel region of Western Australia begins with outreach and data collection in order to visualize and prioritize efforts to protect valuable mangroves, salt marches, seagrasses, and shellfish reefs. This project in the Peel-Harvey estuary launches in March, 2018, with a series of workshops on different approaches to restore these marine habitats.",
+                    "image": "assets/images/locations/western-australia.svg",
+                    "mapUrl": "http://coastalresilience.org/project/western-australia/",
+                    "mapCenter": [-31.95, 115.86]
                 }
             ]
         },
@@ -28,8 +36,15 @@
             "description": "The impacts of climate change are increasingly seen across the Caribbean basin, a region where densely populated often low lying coastal areas are threatened by hurricanes, as well as rising warmer oceans. Given the high dependency in the Caribbean on natural resources for livelihoods, a focus on ecosystems and their interaction with people is essential for climate change adaptation. Our work in this region is focused on helping communities and government increase their resilience to climate change by protecting, restoring and sustainably managing their marine and coastal systems and strengthening local capacity for adaptation.",
             "image": "assets/images/locations/caribbean.svg",
             "mapCenter": [15.7691, -62.9591],
-            "mapZoom": 7,
+            "mapZoom": 5,
             "subregions": [
+                {
+                    "title": "Dominican Republic",
+                    "description": "While the Dominican Republic has prioritized climate change adaptation, challenges to implementation persist from insufficient baseline data to financial gaps. TNC and IFRC will develop and test an innovative adaptation toolkit that will promote better decision making around disaster risk management and climate adaptation. This project launches January, 2018.",
+                    "image": "assets/images/locations/dominican-republic.svg",
+                    "mapUrl": "http://coastalresilience.org/project/dominican-republic/",
+                    "mapCenter": [18.73, -70.16]
+                },
                 {
                     "title": "Grenada, St. Vincent, and the Grenadines",
                     "description": "Demonstrating that governments and communities of small island states can enhance their resilience to climate change by protecting, restoring and effectively managing their marine and coastal ecosystems and strengthening local capacity for adaptation",
@@ -38,11 +53,34 @@
                     "mapCenter": [12.83, -61.04]
                 },
                 {
+                    "title": "Jamaica",
+                    "description": "The Small Island Developing States (SIDS) of the Caribbean are among the world’s most vulnerable to the impacts of climate change. While these losses are expected to grow, ecosystem-based adaptation can significantly reduce risk and avert economic losses. This project, a collaboration between TNC and IFRC, launches in January, 2018.",
+                    "image": "assets/images/locations/jamaica.svg",
+                    "mapUrl": "http://coastalresilience.org/project/jamaica/",
+                    "mapCenter": [18.10, -77.29]
+                },
+                {
                     "title": "U.S Virgin Islands",
                     "description": "In the US Virgin Islands, high resolution satellite imagery and GIS-based models are being used to identify and prioritize high risk and vulnerable coastal and marine sites subject to the effects of sea level rise, increasing storm surge and intensity, and altered precipitation patterns. The impacts of future SLR and storm surge scenarios are being validated by incorporating community perception, knowledge and historic events as a baseline to better understand how ecosystem-based adaptation solutions can help increase people and nature’s resilience to these impacts.",
                     "image": "assets/images/locations/virgin-islands.svg",
                     "mapUrl": "http://maps.coastalresilience.org/usvi/",
                     "mapCenter": [17.72, -64.78]
+                }
+            ]
+        },
+        {
+            "title": "Indonesia",
+            "description": "The Nature Conservancy and the Red Cross have formed a unique and innovative partnership joining the world’s largest conservation nonprofit, with the world’s largest humanitarian organization to address the increasingly detrimental impacts from natural hazards. An initial project focuses on community resilience on the island of Java.",
+            "image": "assets/images/locations/indonesia.svg",
+            "mapCenter": [-7.00, 116.96],
+            "mapZoom": 5,
+            "subregions": [
+                {
+                    "title": "Semarang, Java",
+                    "description": "The goal of the Resilient Coastal Cities project in Semarang is to enhance local collaboration and problem solving to support effective climate change adaption.",
+                    "image": "assets/images/locations/java-indonesia.svg",
+                    "mapUrl": "http://coastalresilience.org/project/indonesia/",
+                    "mapCenter": [-7.00, 110.50]
                 }
             ]
         },
@@ -155,7 +193,7 @@
             "label": "Engagement",
             "stat": 100,
             "secondaryLabel": "Communities",
-            "description": "across 11 countries trained in Coastal resilience action"
+            "description": "across 11 countries trained in Coastal Resilience planning & action"
         },
         {
             "label": "Awareness",
@@ -166,8 +204,8 @@
         {
             "label": "Action",
             "stat": 25,
-            "secondaryLabel": "Decision support tools",
-            "description": "implemented for restoration and conservation efforts"
+            "secondaryLabel": "Restoration or Conservation",
+            "description": "projects implemented using our decision support tools"
         }
     ],
     "partnerModalLinks": [

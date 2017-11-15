@@ -43,6 +43,11 @@ rules.
 
 ### Creating a Release with Git Flow
 
+This project uses git flow for releases of changes to site framework source
+code. Prior to making a release, we should also ask TNC whether there are
+any outstanding uncommitted configuration changes they'd like to have
+included in a versioned release.
+
 You can [find the latest version of `git-flow` to install here](https://github.com/petervanderdoes/gitflow-avh).
 
 Once it's installed, you'll need to enable `git flow` in your local version of

@@ -15,7 +15,7 @@ deploy:
     provider: releases
     api_key:
         secure: $GITHUB_TOKEN
-    file: 'tnc-network-site-${TRAVIS-TAG}.zip'
+    file: 'tnc-network-site.zip'
     skip-cleanup: true
     on:
         tags: true

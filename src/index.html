@@ -123,19 +123,19 @@
             <p>
                 At consectetur, reprehenderit ad distinctio sapiente obcaecati facilis dolor possimus officia incidunt consequatur in sed dignissimos neque.
             </p>
-            <% _.each(regionList, function(region) { %>
-                <div class="location" demo-js-parent-location id="<%= region.title %>">
-                    <div class="location--title" id="<%= region.title %>">
-                        <%= region.title %>
-                    </div>
-                    <img src="<%= region.image %>" alt="<%= region.title %>">
-                </div>
-            <% }) %>
+            <div id="region-list-items"></div>
         </div>
     </script>
 
+    <script type="text/template" id="regionListItemTemplate">
+        <div class="location--title" id="<%= title %>">
+            <%= title %>
+        </div>
+        <img src="<%= image %>" alt="<%= title %>">
+    </script>
+
     <script type="text/template" id="regionDetailsTemplate">
-        <div class="location active" demo-js-parent-location="" style="">
+        <div class="location active">
             <div class="location--title">
                 <%= title %>
             </div>
@@ -146,20 +146,20 @@
             <p class="location--description">
                 <%= description %>
             </p>
-            <% _.each(subregions, function(sr) { %>
-                <div class="location">
-                    <div class="location--title">
-                        <%= sr.title %>
-                    </div>
-                    <img src="<%= sr.image %>" alt="location background image">
-                    <a href="<%= sr.mapUrl %>" target="_blank">
-                        <span class="sr-only">
-                            Open map
-                        </span>
-                    </a>
-                </div>
-            <% }) %>
+            <div id="subregion-list"></div>
         </div>
+    </script>
+
+    <script type="text/template" id="subregionDetailsTemplate">
+        <div class="location--title">
+            <%= title %>
+        </div>
+        <img src="<%= image %>" alt="location background image">
+        <a href="<%= mapUrl %>" target="_blank">
+            <span class="sr-only">
+                Open map
+            </span>
+        </a>
     </script>
 
     <script type="text/template" id="markerPopupTemplate">

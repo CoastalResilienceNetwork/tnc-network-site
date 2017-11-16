@@ -11,6 +11,7 @@ var PartnerModalView = window.PartnerModalView;
 
 window.App = Backbone.View.extend({
     initialize: function() {
+        var self = this;
         this.mapView = null;
         this.regionListView = null;
         this.regionDetailsView = null;
@@ -23,14 +24,20 @@ window.App = Backbone.View.extend({
         this.toggleDetails = this.toggleDetails.bind(this);
         this.slideOutStatsRegion = _.once(this.slideOutStatsRegion).bind(this);
 
-        this.listenTo(this.model, 'change:detailsVisible', this.toggleDetails);
-        this.listenToOnce(this.model, 'change:regionList', this.createRegionList);
-        this.listenToOnce(this.model, 'change:baseMapTilesUrl', this.createMapView);
         this.listenToOnce(this.model, 'change:detailsVisible', this.slideOutStatsRegion);
         this.listenToOnce(this.model, 'change:statsList', this.createStatsView);
         this.listenToOnce(this.model, 'change:partnerModalLinks', this.createPartnerModalView);
 
-        this.model.fetch();
+        this.model.fetch({
+            success: function(model, response) {
+                model.set('regionList', new window.RegionsCollection(response.regionList));
+
+                self.listenTo(model.get('regionList'), 'change:selected', self.toggleDetails);
+                self.createRegionList();
+                self.createMapView();
+            }
+        });
+
         this.render();
     },
 
@@ -73,8 +80,8 @@ window.App = Backbone.View.extend({
 
     animateDetailsViewReplacingList: function() {
         var self = this;
-        var selectedRegion = this.model.get('selectedRegion').get('title');
-        var listItems = $('#region-location-list').children();
+        var selectedRegion = this.model.getSelectedRegion().get('title');
+        var listItems = $('#region-list-items').children();
         var $sidebarInnerEl = $('.sidebar--inner');
         var promise = $.Deferred();
         var $selectedListItem;
@@ -121,10 +128,9 @@ window.App = Backbone.View.extend({
     },
 
     toggleDetails: function() {
-        if (this.model.get('detailsVisible')) {
+        if (this.model.getSelectedRegion()) {
             this.regionDetailsView = new RegionDetailsView({
-                model: this.model.get('selectedRegion'),
-                hideDetails: this.model.hideDetails,
+                model: this.model.getSelectedRegion(),
             });
             this.animateDetailsViewReplacingList();
         } else {

@@ -7,7 +7,8 @@ window.SubregionDetailsModel = Backbone.Model.extend({
         title: null,
         description: null,
         mapUrl: null,
-        image: null
+        image: null,
+        selected: false,
     },
 });
 
@@ -53,5 +54,16 @@ window.AppModel = Backbone.Model.extend({
     getSelectedRegion: function() {
         return this.get('regionList')
             .filter({ selected: true })[0];
+    },
+
+    getSelectedSubregion: function() {
+        var selectedRegion = this.getSelectedRegion();
+
+        if (selectedRegion) {
+            return selectedRegion.get('subregions')
+                .filter({ selected: true })[0];
+        }
+
+        return null;
     }
 });

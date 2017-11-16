@@ -23,6 +23,7 @@ window.MapView = Backbone.View.extend({
         this.slideOutStatsRegion = options.slideOutStatsRegion;
         this.listenTo(this.model.get('regionList'), 'change:selected', this.panBaseMap);
         this.listenTo(this.model.get('regionList'), 'change:selected', this.updateMarkers);
+        this.listenTo(this.model.get('regionList'), 'change:selected', this.toggleSubregionMapEvents);
         this.markers = L.layerGroup();
 
         // Custom icon for markers
@@ -57,11 +58,22 @@ window.MapView = Backbone.View.extend({
         return this;
     },
 
+    toggleSubregionMapEvents: function(region) {
+        if (region.get('selected')) {
+            this.listenTo(region.get('subregions'), 'change:selected', this.panBaseMap);
+        } else {
+            this.stopListening(region.get('subregions'), 'change:selected', this.panBaseMap);
+        }
+    },
+
     panBaseMap: function() {
         var center = this.model.get('initialMapCenter');
         var zoom = this.model.get('initialMapZoom');
 
-        if (this.model.getSelectedRegion()) {
+        if (this.model.getSelectedSubregion()) {
+            center = this.model.getSelectedSubregion().get('mapCenter');
+            zoom = this.model.getSelectedSubregion().get('mapZoom');
+        } else if (this.model.getSelectedRegion()) {
             center = this.model.getSelectedRegion().get('mapCenter');
             zoom = this.model.getSelectedRegion().get('mapZoom');
         }
@@ -94,28 +106,53 @@ window.MapView = Backbone.View.extend({
         var offset = [0, 25]; // Marker is used as popup tip
         var popupContents = new MarkerPopupView({ model: subregion });
         var marker = L.marker(subregion.get('mapCenter'), { icon: this.icon })
-            .bindPopup(popupContents.render().el, { offset: offset });
+            .bindPopup(popupContents.render().el, { offset: offset, maxHeight: 200 });
+
+        this.assignMarkerEvents(marker, popupContents, subregion);
+
+        return marker;
+    },
+
+    assignMarkerEvents: function(marker, popupContents, subregion) {
         var markerCopy = null;
+        var self = this;
 
         // Adds a copy of the marker to the selectedMarker pane
         // so that it is displayed above the popup and acts as
         // the popup tip.
-        marker.on('popupopen', _.bind(function(e) {
-            markerCopy = L.marker(e.target.getLatLng(), {
-                pane: 'selectedMarker', icon: this.icon
-            });
-            markerCopy.addTo(this.map);
-        }, this));
+        marker.on('popupopen', function(e) {
+            markerCopy = self.createMarkerCopy(e.target.getLatLng());
+            markerCopy.addTo(self.map);
+        });
 
+        // Toggle the popup with the state of the sidebar
+        subregion.on('change:selected', function() {
+            self.togglePopup(subregion, marker);
+        });
+
+        // Marker used for popup tip is no longer needed
         marker.on('popupclose', function() {
             markerCopy.remove();
         });
 
+        // Manually remove view to ensure there are no leaks
         marker.on('remove', function() {
             popupContents.remove();
         });
+    },
 
-        return marker;
+    createMarkerCopy: function(latLng) {
+        return L.marker(latLng, {
+            pane: 'selectedMarker', icon: this.icon
+        });
+    },
+
+    togglePopup: function(subregion, marker) {
+        if (subregion.get('selected')) {
+            marker.openPopup();
+        } else {
+            marker.closePopup();
+        }
     }
 });
 
@@ -170,11 +207,14 @@ window.RegionDetailsView = Backbone.View.extend({
 
     render: function() {
         var self = this;
-
         this.$el.html(this.template(this.model.attributes));
 
         this.$el.find('#subregion-list').html(this.model.get('subregions').map(function(subregion) {
-            return new window.SubregionDetailsView({ model: subregion }).render().el;
+            var view = new window.SubregionDetailsView({ model: subregion });
+
+            self.listenTo(view, 'toggle', self.toggleSubregionDetails);
+
+            return view.render().el;
         }));
 
         return this;
@@ -182,19 +222,45 @@ window.RegionDetailsView = Backbone.View.extend({
 
     closeDetails: function() {
         this.model.set('selected', false);
+        this.model.get('subregions').forEach(function(subregion) {
+            subregion.set('selected', false);
+        });
+    },
+
+    toggleSubregionDetails: function(subregionTitle) {
+        var subregionSelector = "[data-title='" + subregionTitle + "']";
+        var $description = this.$el.find(subregionSelector);
+
+        // If a different subregion is open, close it and deselect it
+        this.$el.find('.subregion.location--description:not(' + subregionSelector + '):visible').slideUp();
+        this.model.get('subregions').forEach(function(subregion) {
+            if (subregion.get('title') !== subregionTitle && subregion.get('selected')) {
+                subregion.set('selected', false);
+            }
+        });
+
+        // Toggle the description of the selected subregion
+        $description.slideToggle();
     }
 });
 
 window.SubregionDetailsView = Backbone.View.extend({
-    tagName: 'div',
-    className: 'location',
-
     template: _.template($('#subregionDetailsTemplate').html()),
+
+    events: {
+        'click .location': 'toggleSelected',
+    },
 
     render: function() {
         this.$el.html(this.template(this.model.attributes));
 
         return this;
+    },
+
+    toggleSelected: function() {
+        this.model.set('selected', !this.model.get('selected'));
+
+        this.trigger('toggle', this.model.get('title'));
     }
 });
 

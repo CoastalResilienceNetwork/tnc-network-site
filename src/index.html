@@ -15,7 +15,7 @@
     <meta content="#ffffff" name="theme-color">
     <link href="assets/images/favicon.ico?" rel="shortcut icon" type="image/x-icon">
     <title>
-        Coastal Resilience – Mapping portal
+        Coastal Resilience – Mapping portal
     </title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <link href="https://unpkg.com/leaflet@1.0.0/dist/leaflet.css" rel="stylesheet">
@@ -151,15 +151,16 @@
     </script>
 
     <script type="text/template" id="subregionDetailsTemplate">
-        <div class="location--title">
-            <%= title %>
+        <div class="location">
+            <div class="location--title">
+                <%= title %>
+            </div>
+            <img src="<%= image %>" alt="location background image">
         </div>
-        <img src="<%= image %>" alt="location background image">
-        <a href="<%= mapUrl %>" target="_blank">
-            <span class="sr-only">
-                Open map
-            </span>
-        </a>
+        <p class="subregion location--description" data-title="<%= title %>">
+            <%= description %>
+            <a class="btn btn-primary" href="<%= mapUrl %>" target="_blank">Open map</a>
+        </p>
     </script>
 
     <script type="text/template" id="markerPopupTemplate">

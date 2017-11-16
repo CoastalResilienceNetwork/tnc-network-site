@@ -19,7 +19,7 @@ function cibuild() {
         zip -r tnc-network-site-${GIT_COMMIT}.zip src/
     else
         mv src/ tnc-network-site/
-        zip -r tnc-network-site-${TRAVIS-TAG}.zip tnc-network-site/
+        zip -r tnc-network-site-${TRAVIS_TAG}.zip tnc-network-site/
     fi
 }
 

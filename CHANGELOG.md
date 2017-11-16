@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Remedy version number bug in release script.
+
 ## 1.0.1
 
 - Set up Travis to create release artifacts.

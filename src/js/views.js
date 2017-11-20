@@ -9,7 +9,7 @@ var MarkerPopupView = Backbone.View.extend({
     template: _.template($('#markerPopupTemplate').html()),
 
     render: function() {
-        this.$el.html(this.template(this.model));
+        this.$el.html(this.template(this.model.attributes));
 
         return this;
     },
@@ -21,8 +21,9 @@ window.MapView = Backbone.View.extend({
     initialize: function(options) {
         this.map = null;
         this.slideOutStatsRegion = options.slideOutStatsRegion;
-        this.listenTo(this.model, 'change:selectedRegion', this.panBaseMap);
-        this.listenTo(this.model, 'change:selectedRegion', this.updateMarkers);
+        this.listenTo(this.model.get('regionList'), 'change:selected', this.panBaseMap);
+        this.listenTo(this.model.get('regionList'), 'change:selected', this.updateMarkers);
+        this.listenTo(this.model.get('regionList'), 'change:selected', this.toggleSubregionMapEvents);
         this.markers = L.layerGroup();
 
         // Custom icon for markers
@@ -57,28 +58,39 @@ window.MapView = Backbone.View.extend({
         return this;
     },
 
+    toggleSubregionMapEvents: function(region) {
+        if (region.get('selected')) {
+            this.listenTo(region.get('subregions'), 'change:selected', this.panBaseMap);
+        } else {
+            this.stopListening(region.get('subregions'), 'change:selected', this.panBaseMap);
+        }
+    },
+
     panBaseMap: function() {
-        var newCenter = this.model.get('selectedRegion') ?
-            this.model.get('selectedRegion').get('mapCenter') :
-            this.model.get('initialMapCenter');
+        var center = this.model.get('initialMapCenter');
+        var zoom = this.model.get('initialMapZoom');
 
-        var newZoom = this.model.get('selectedRegion') ?
-            this.model.get('selectedRegion').get('mapZoom') :
-            this.model.get('initialMapZoom');
+        if (this.model.getSelectedSubregion()) {
+            center = this.model.getSelectedSubregion().get('mapCenter');
+            zoom = this.model.getSelectedSubregion().get('mapZoom');
+        } else if (this.model.getSelectedRegion()) {
+            center = this.model.getSelectedRegion().get('mapCenter');
+            zoom = this.model.getSelectedRegion().get('mapZoom');
+        }
 
-        this.map.flyTo(newCenter, newZoom);
+        this.map.flyTo(center, zoom);
     },
 
     updateMarkers: function() {
         var subregions = null;
 
-        if (this.model.get('selectedRegion')) {
-            subregions = this.model.get('selectedRegion').get('subregions');
+        if (this.model.getSelectedRegion()) {
+            subregions = this.model.getSelectedRegion().get('subregions');
 
             if (subregions && subregions.length > 0) {
-                _.forEach(subregions, function(region) {
-                    if (region.mapCenter) {
-                        this.markers.addLayer(this.createMarker(region));
+                subregions.forEach(function(subregion) {
+                    if (subregion.get('mapCenter')) {
+                        this.markers.addLayer(this.createMarker(subregion));
                     }
                 }, this);
             }
@@ -90,32 +102,57 @@ window.MapView = Backbone.View.extend({
         }
     },
 
-    createMarker: function(region) {
+    createMarker: function(subregion) {
         var offset = [0, 25]; // Marker is used as popup tip
-        var popupContents = new MarkerPopupView({ model: region });
-        var marker = L.marker(region.mapCenter, { icon: this.icon })
-            .bindPopup(popupContents.render().el, { offset: offset });
+        var popupContents = new MarkerPopupView({ model: subregion });
+        var marker = L.marker(subregion.get('mapCenter'), { icon: this.icon })
+            .bindPopup(popupContents.render().el, { offset: offset, maxHeight: 200 });
+
+        this.assignMarkerEvents(marker, popupContents, subregion);
+
+        return marker;
+    },
+
+    assignMarkerEvents: function(marker, popupContents, subregion) {
         var markerCopy = null;
+        var self = this;
 
         // Adds a copy of the marker to the selectedMarker pane
         // so that it is displayed above the popup and acts as
         // the popup tip.
-        marker.on('popupopen', _.bind(function(e) {
-            markerCopy = L.marker(e.target.getLatLng(), {
-                pane: 'selectedMarker', icon: this.icon
-            });
-            markerCopy.addTo(this.map);
-        }, this));
+        marker.on('popupopen', function(e) {
+            markerCopy = self.createMarkerCopy(e.target.getLatLng());
+            markerCopy.addTo(self.map);
+        });
 
+        // Toggle the popup with the state of the sidebar
+        subregion.on('change:selected', function() {
+            self.togglePopup(subregion, marker);
+        });
+
+        // Marker used for popup tip is no longer needed
         marker.on('popupclose', function() {
             markerCopy.remove();
         });
 
+        // Manually remove view to ensure there are no leaks
         marker.on('remove', function() {
             popupContents.remove();
         });
+    },
 
-        return marker;
+    createMarkerCopy: function(latLng) {
+        return L.marker(latLng, {
+            pane: 'selectedMarker', icon: this.icon
+        });
+    },
+
+    togglePopup: function(subregion, marker) {
+        if (subregion.get('selected')) {
+            marker.openPopup();
+        } else {
+            marker.closePopup();
+        }
     }
 });
 
@@ -124,17 +161,38 @@ window.RegionListView = Backbone.View.extend({
 
     template: _.template($('#regionListTemplate').html()),
 
+    render: function() {
+        this.$el.html(this.template({ }));
+
+        this.$el.find('#region-list-items').html(this.model.get('regionList').map(function(region) {
+            return new window.RegionListItemView({ model: region }).render().el;
+        }));
+
+        return this;
+    }
+});
+
+window.RegionListItemView = Backbone.View.extend({
+    tagName: 'div',
+    className: 'location',
+    id: function() {
+        return this.model.get('title');
+    },
+
+    template: _.template($('#regionListItemTemplate').html()),
+
     events: {
-        'click': 'handleSelection',
+        'click': 'selectRegion',
     },
 
     render: function() {
-        this.$el.html(this.template({ regionList: this.model.get('regionList') }));
+        this.$el.html(this.template(this.model.attributes));
+
         return this;
     },
 
-    handleSelection: function(e) {
-        this.model.showDetails(e.target.id);
+    selectRegion: function() {
+        this.model.set('selected', true);
     },
 });
 
@@ -147,25 +205,63 @@ window.RegionDetailsView = Backbone.View.extend({
         'click #close-details-btn': 'closeDetails',
     },
 
-    initialize: function(options) {
-        this.hideDetails = options.hideDetails;
-    },
-
     render: function() {
-        this.$el.html(this.template({
-            title: this.model.get('title'),
-            description: this.model.get('description'),
-            image: this.model.get('image'),
-            mapUrl: this.model.get('mapUrl'),
-            subregions: this.model.get('subregions'),
+        var self = this;
+        this.$el.html(this.template(this.model.attributes));
+
+        this.$el.find('#subregion-list').html(this.model.get('subregions').map(function(subregion) {
+            var view = new window.SubregionDetailsView({ model: subregion });
+
+            self.listenTo(view, 'toggle', self.toggleSubregionDetails);
+
+            return view.render().el;
         }));
 
         return this;
     },
 
     closeDetails: function() {
-        this.hideDetails();
+        this.model.set('selected', false);
+        this.model.get('subregions').forEach(function(subregion) {
+            subregion.set('selected', false);
+        });
     },
+
+    toggleSubregionDetails: function(subregionTitle) {
+        var subregionSelector = "[data-title='" + subregionTitle + "']";
+        var $description = this.$el.find(subregionSelector);
+
+        // If a different subregion is open, close it and deselect it
+        this.$el.find('.subregion.location--description:not(' + subregionSelector + '):visible').slideUp();
+        this.model.get('subregions').forEach(function(subregion) {
+            if (subregion.get('title') !== subregionTitle && subregion.get('selected')) {
+                subregion.set('selected', false);
+            }
+        });
+
+        // Toggle the description of the selected subregion
+        $description.slideToggle();
+    }
+});
+
+window.SubregionDetailsView = Backbone.View.extend({
+    template: _.template($('#subregionDetailsTemplate').html()),
+
+    events: {
+        'click .location': 'toggleSelected',
+    },
+
+    render: function() {
+        this.$el.html(this.template(this.model.attributes));
+
+        return this;
+    },
+
+    toggleSelected: function() {
+        this.model.set('selected', !this.model.get('selected'));
+
+        this.trigger('toggle', this.model.get('title'));
+    }
 });
 
 window.StatsView = Backbone.View.extend({

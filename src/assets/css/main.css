@@ -957,6 +957,22 @@ ul {
     margin-bottom: 2rem
 }
 
+.location--description a {
+    margin: 0 auto 20px auto;
+    display: none;
+    width: 105px;
+}
+
+@media (max-width: 900px) {
+    .location--description a {
+        display: block;
+    }
+}
+
+#subregion-list .location--description {
+    display: none;
+}
+
 .logo img {
     max-width: 10rem
 }
@@ -1054,6 +1070,10 @@ ul {
 
 .leaflet-popup-tip-container {
     display: none;
+}
+
+.leaflet-popup-scrolled {
+  border: none;
 }
 
 .marker-popup strong {

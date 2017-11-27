@@ -11,76 +11,83 @@
         {
             "title": "Australia",
             "description": "The nation’s high level of biodiversity classifies it as one of 17 of the ‘megadiversity’ countries in the world, holding roughly two thirds of the world’s biodiversity. Climate adaptation strategies in Australia focus largely on coastal habitat restoration.",
-            "image": "assets/images/locations/australia.svg",
+            "image": "australia.svg",
             "mapCenter": [-30.00, 130.00],
             "mapZoom": 4,
             "subregions": [
                 {
                     "title": "Victoria",
                     "description": "The temperate southern coast of Australia is home to hundreds of bays and estuaries containing important habitats like shellfish reefs, mangrove forests, seagrass beds and saltmarshes. The Nature Conservancy Australia is working to repair these coastal habitats and restore their critical natural services with a current focus on shellfish reef restoration.",
-                    "image": "assets/images/locations/victoria-australia.svg",
+                    "image": "victoria-australia.svg",
                     "mapUrl": "http://coastalresilience.org/project/victoria-australia/",
-                    "mapCenter": [-37.81, 144.96]
+                    "mapCenter": [-37.81, 144.96],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Western Australia",
                     "description": "Restoration of marine habitats in the Peel region of Western Australia begins with outreach and data collection in order to visualize and prioritize efforts to protect valuable mangroves, salt marches, seagrasses, and shellfish reefs. This project in the Peel-Harvey estuary launches in March, 2018, with a series of workshops on different approaches to restore these marine habitats.",
-                    "image": "assets/images/locations/western-australia.svg",
+                    "image": "western-australia.svg",
                     "mapUrl": "http://coastalresilience.org/project/western-australia/",
-                    "mapCenter": [-31.95, 115.86]
+                    "mapCenter": [-31.95, 115.86],
+                    "mapZoom": 6
                 }
             ]
         },
         {
             "title": "Caribbean",
             "description": "The impacts of climate change are increasingly seen across the Caribbean basin, a region where densely populated often low lying coastal areas are threatened by hurricanes, as well as rising warmer oceans. Given the high dependency in the Caribbean on natural resources for livelihoods, a focus on ecosystems and their interaction with people is essential for climate change adaptation. Our work in this region is focused on helping communities and government increase their resilience to climate change by protecting, restoring and sustainably managing their marine and coastal systems and strengthening local capacity for adaptation.",
-            "image": "assets/images/locations/caribbean.svg",
+            "image": "caribbean.svg",
             "mapCenter": [15.7691, -62.9591],
             "mapZoom": 5,
             "subregions": [
                 {
                     "title": "Dominican Republic",
                     "description": "While the Dominican Republic has prioritized climate change adaptation, challenges to implementation persist from insufficient baseline data to financial gaps. TNC and IFRC will develop and test an innovative adaptation toolkit that will promote better decision making around disaster risk management and climate adaptation. This project launches January, 2018.",
-                    "image": "assets/images/locations/dominican-republic.svg",
+                    "image": "dominican-republic.svg",
                     "mapUrl": "http://coastalresilience.org/project/dominican-republic/",
-                    "mapCenter": [18.73, -70.16]
+                    "mapCenter": [18.73, -70.16],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Grenada, St. Vincent, and the Grenadines",
                     "description": "Demonstrating that governments and communities of small island states can enhance their resilience to climate change by protecting, restoring and effectively managing their marine and coastal ecosystems and strengthening local capacity for adaptation",
-                    "image": "assets/images/locations/grenada.svg",
+                    "image": "grenada.svg",
                     "mapUrl": "http://maps.coastalresilience.org/gsvg/",
-                    "mapCenter": [12.83, -61.04]
+                    "mapCenter": [12.83, -61.04],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Jamaica",
                     "description": "The Small Island Developing States (SIDS) of the Caribbean are among the world’s most vulnerable to the impacts of climate change. While these losses are expected to grow, ecosystem-based adaptation can significantly reduce risk and avert economic losses. This project, a collaboration between TNC and IFRC, launches in January, 2018.",
-                    "image": "assets/images/locations/jamaica.svg",
+                    "image": "jamaica.svg",
                     "mapUrl": "http://coastalresilience.org/project/jamaica/",
-                    "mapCenter": [18.10, -77.29]
+                    "mapCenter": [18.10, -77.29],
+                    "mapZoom": 6
                 },
                 {
                     "title": "U.S Virgin Islands",
                     "description": "In the US Virgin Islands, high resolution satellite imagery and GIS-based models are being used to identify and prioritize high risk and vulnerable coastal and marine sites subject to the effects of sea level rise, increasing storm surge and intensity, and altered precipitation patterns. The impacts of future SLR and storm surge scenarios are being validated by incorporating community perception, knowledge and historic events as a baseline to better understand how ecosystem-based adaptation solutions can help increase people and nature’s resilience to these impacts.",
-                    "image": "assets/images/locations/virgin-islands.svg",
+                    "image": "virgin-islands.svg",
                     "mapUrl": "http://maps.coastalresilience.org/usvi/",
-                    "mapCenter": [17.72, -64.78]
+                    "mapCenter": [17.72, -64.78],
+                    "mapZoom": 6
                 }
             ]
         },
         {
             "title": "Indonesia",
             "description": "The Nature Conservancy and the Red Cross have formed a unique and innovative partnership joining the world’s largest conservation nonprofit, with the world’s largest humanitarian organization to address the increasingly detrimental impacts from natural hazards. An initial project focuses on community resilience on the island of Java.",
-            "image": "assets/images/locations/indonesia.svg",
+            "image": "indonesia.svg",
             "mapCenter": [-7.00, 116.96],
             "mapZoom": 5,
             "subregions": [
                 {
                     "title": "Semarang, Java",
                     "description": "The goal of the Resilient Coastal Cities project in Semarang is to enhance local collaboration and problem solving to support effective climate change adaption.",
-                    "image": "assets/images/locations/java-indonesia.svg",
+                    "image": "java-indonesia.svg",
                     "mapUrl": "http://coastalresilience.org/project/indonesia/",
-                    "mapCenter": [-7.00, 110.50]
+                    "mapCenter": [-7.00, 110.50],
+                    "mapZoom": 6
                 }
             ]
         },
@@ -88,102 +95,114 @@
             "title": "Mexico and Central America",
             "description": "The Government of Mexico’s adoption of an approach to climate and disaster risk reduction based in natural solutions is essential to protect its people and infrastructure, and our Coastal Resilience approach and team has a real opportunity to work with the Mexican government and its international policy delegations to influence peer countries in Latin America and emerging economies globally.",
             "mapUrl": "http://coastalresilience.org",
-            "image": "assets/images/locations/mexico-centralAm.svg",
+            "image": "mexico-centralAm.svg",
             "mapCenter": [17.4345, -96.1962],
             "mapZoom": 5,
             "subregions": [
                 {
                     "title": "Mesoamerican Reef",
                     "description": "The Mesomerican Reef supports multi-billion dollar tourism and fisheries industries, key income for Mexico, Belize, Guatemala and Honduras. Two million people live along the coast, rapidly developing despite being threatened by tropical storms and sea level rise. Partners in this Coastal Resilience project are working with governments, real state developers, tourism and fisheries sectors to adopt practices that better conserves natural coastlines while reducing people´s vulnerability to climate events.",
-                    "image": "assets/images/locations/mesomerican-reef.svg",
+                    "image": "mesomerican-reef.svg",
                     "mapUrl": "http://maps.coastalresilience.org/mar",
-                    "mapCenter": [17.41, -86.75]
+                    "mapCenter": [17.41, -86.75],
+                    "mapZoom": 6
                 }
             ]
         },
         {
             "title": "United States",
             "description": "The Coastal Resilience tools provide support for decision-makers working at national and multi-national scales in assessing where to act in risk reduction, adaptation and conservation. They build from critical resources such as the Global Platform on Risk Reduction, World Risk Report, and Conservation Atlas.",
-            "image": "assets/images/locations/US-Mainland.svg",
+            "image": "US-Mainland.svg",
             "mapCenter": [39.3003, -97.1192],
             "mapZoom": 4,
             "subregions": [
                 {
                     "title": "California",
                     "description": "Helping California’s coastal communities plan for resilience in the face of sea level rise",
-                    "image": "assets/images/locations/california.svg",
+                    "image": "california.svg",
                     "mapUrl": "http://maps.coastalresilience.org/california",
-                    "mapCenter": [35.23, -119.34]
+                    "mapCenter": [35.23, -119.34],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Connecticut",
                     "description": "Visualizing coastal impacts, planning wisely for the future, taking action today",
-                    "image": "assets/images/locations/connecticut-new-york.svg",
+                    "image": "connecticut-new-york.svg",
                     "mapUrl": "http://maps.coastalresilience.org/connecticut",
-                    "mapCenter": [41.18, -72.82]
+                    "mapCenter": [41.18, -72.82],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Gulf of Mexico",
                     "description": "With its high incidence of storms and hurricanes and valuable ecological and economic resources, the Gulf region is a high-risk area with great potential to demonstrate natural risk reduction solutions. The Coastal Resilience approach and tools have been applied Gulf-wide and at specific sites, including those that help identify where to implement oyster reef restoration to meet social and ecological goals. Oyster restoration demonstration projects with partners like the National Oceanic and Atmospheric Administration (NOAA) and Army Corps of Engineers (ACOE) creates a strong base for replication and scaling-up to larger projects.",
-                    "image": "assets/images/locations/gulf-of-mexico.svg",
+                    "image": "gulf-of-mexico.svg",
                     "mapUrl": "http://maps.coastalresilience.org/gulfmex",
-                    "mapCenter": [29, -93.34]
+                    "mapCenter": [29, -93.34],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Hawaii",
                     "description": "",
-                    "image": "assets/images/locations/hawaii.svg",
+                    "image": "hawaii.svg",
                     "mapUrl": "http://maps.coastalresilience.org/hawaii",
-                    "mapCenter": [19.5, -156]
+                    "mapCenter": [19.5, -156],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Maine",
                     "description": "Coastal Resilience is a web mapping tool that allows you to examine nature’s role in reducing coastal risks and opportunities for habitat conservation in Maine",
-                    "image": "assets/images/locations/maine.svg",
+                    "image": "maine.svg",
                     "mapUrl": "http://maps.coastalresilience.org/maine",
-                    "mapCenter": [44.5, -69]
+                    "mapCenter": [44.5, -69],
+                    "mapZoom": 6
                 },
                 {
                     "title": "New Jersey",
                     "description": "Using natural infrastructure to build resiliency in New Jersey’s coastal communities",
-                    "image": "assets/images/locations/new-jersey.svg",
+                    "image": "new-jersey.svg",
                     "mapUrl": "http://maps.coastalresilience.org/newjersey",
-                    "mapCenter": [39.95, -74.40]
+                    "mapCenter": [39.95, -74.40],
+                    "mapZoom": 6
                 },
                 {
                     "title": "New York",
                     "description": "Providing New York with the right tools, information and resources to help reduce community vulnerability, plan responsibly, and protect natural resources.",
-                    "image": "assets/images/locations/connecticut-new-york.svg",
+                    "image": "connecticut-new-york.svg",
                     "mapUrl": "http://maps.coastalresilience.org/newyork",
-                    "mapCenter": [40.6, -73.4]
+                    "mapCenter": [40.6, -73.4],
+                    "mapZoom": 6
                 },
                 {
                     "title": "North Carolina",
                     "description": "Identifying nature-based solutions for reducing risk in coastal communities",
-                    "image": "assets/images/locations/north-carolina.svg",
+                    "image": "north-carolina.svg",
                     "mapUrl": "http://maps.coastalresilience.org/northcarolina",
-                    "mapCenter": [34.5, -78]
+                    "mapCenter": [34.5, -78],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Southeast Florida",
                     "description": "Restoring natural areas so they can protect vulnerable island communities",
-                    "image": "assets/images/locations/florida.svg",
+                    "image": "florida.svg",
                     "mapUrl": "http://maps.coastalresilience.org/seflorida",
-                    "mapCenter": [25.85, -80.85]
+                    "mapCenter": [25.85, -80.85],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Virginia",
                     "description": "Coastal Resilience is a decision-support tool that incorporates the best available science and local data to enable communities to visualize the risks imposed by sea-level rise and storm surge on the people, economy, and coastal habitats of the Eastern Shore and identify nature-based solutions for enhancing resilience and reducing risks where possible",
-                    "image": "assets/images/locations/virginia.svg",
+                    "image": "virginia.svg",
                     "mapUrl": "http://maps.coastalresilience.org/virginia",
-                    "mapCenter": [37.5, -75.8]
+                    "mapCenter": [37.5, -75.8],
+                    "mapZoom": 6
                 },
                 {
                     "title": "Washington",
                     "description": "With the Coastal Resilience/Floodplains by Design decision support tools, users can explore data and spatial analysis results for the rivers and shorelines of Washington from Puget Sound to the Outer Coast. These tools provide managers and planners mechanisms to explore the role of natural habitat in risk reduction along marine and fresh water shorelines to inform local restoration projects and development planning.",
-                    "image": "assets/images/locations/washington.svg",
+                    "image": "washington.svg",
                     "mapUrl": "http://maps.coastalresilience.org/pugetsound",
-                    "mapCenter": [47.89, -122.47]
+                    "mapCenter": [47.89, -122.47],
+                    "mapZoom": 6
                 }
             ]
         }

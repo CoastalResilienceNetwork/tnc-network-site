@@ -1,3 +1,7 @@
+## 1.1.1
+
+- Update site intro with text from deployed TNC version.
+
 ## 1.1.0
 
 - Add fly-to transitions for subregion.

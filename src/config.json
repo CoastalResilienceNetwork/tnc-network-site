@@ -133,6 +133,14 @@
                     "mapZoom": 6
                 },
                 {
+                    "title": "Georgia",
+                    "description": "Identifying nature-based solutions for reducing risk in coastal communities",
+                    "image": "north-carolina.svg",
+                    "mapUrl": "http://maps.coastalresilience.org/georgia",
+                    "mapCenter": [30.9, -81.5],
+                    "mapZoom": 6
+                },
+                {
                     "title": "Gulf of Mexico",
                     "description": "With its high incidence of storms and hurricanes and valuable ecological and economic resources, the Gulf region is a high-risk area with great potential to demonstrate natural risk reduction solutions. The Coastal Resilience approach and tools have been applied Gulf-wide and at specific sites, including those that help identify where to implement oyster reef restoration to meet social and ecological goals. Oyster restoration demonstration projects with partners like the National Oceanic and Atmospheric Administration (NOAA) and Army Corps of Engineers (ACOE) creates a strong base for replication and scaling-up to larger projects.",
                     "image": "gulf-of-mexico.svg",
@@ -178,6 +186,14 @@
                     "image": "north-carolina.svg",
                     "mapUrl": "http://maps.coastalresilience.org/northcarolina",
                     "mapCenter": [34.5, -78],
+                    "mapZoom": 6
+                },
+                {
+                    "title": "South Carolina",
+                    "description": "Identifying nature-based solutions for reducing risk in coastal communities",
+                    "image": "north-carolina.svg",
+                    "mapUrl": "http://maps.coastalresilience.org/southcarolina",
+                    "mapCenter": [33.9, -79],
                     "mapZoom": 6
                 },
                 {

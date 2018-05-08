@@ -92,3 +92,17 @@ Once you've pushed the tags, the new release will appear in the project's
 
 Edit the latest tagged release to give it a version number as the title -- like
 `1.2.3` -- and to add release notes.
+
+### Adding/Removing Sites
+
+The geography buttons are controlled by the config.json found in the tnc-network-site repo 'src' folder. The json requires an svg (must be requested by graphic designer), the mapping portal URL, title, and description for each geography. 
+
+Once the json is modified, push those changes to git. 
+
+From a remote desktop connection to the maps machine, navigate to C:\projects\TNC\dev\networksite\app and replace the config.json with the new one. dev.maps.coastalresilience.org/network will automatically be updated with your changes --> no build code is required.
+
+Once satisfied with dev, push the git changes to production and on maps, overwrite the config.json located at C:\projects\TNC\NetworkSite\app
+
+The network map is controled by the "Network" map service and must be updated to show polygons for each geography.
+
+

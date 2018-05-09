@@ -135,7 +135,7 @@
                 {
                     "title": "Georgia",
                     "description": "Identifying nature-based solutions for reducing risk in coastal communities",
-                    "image": "north-carolina.svg",
+                    "image": "georgia.svg",
                     "mapUrl": "http://maps.coastalresilience.org/georgia",
                     "mapCenter": [30.9, -81.5],
                     "mapZoom": 6
@@ -191,7 +191,7 @@
                 {
                     "title": "South Carolina",
                     "description": "Identifying nature-based solutions for reducing risk in coastal communities",
-                    "image": "north-carolina.svg",
+                    "image": "south-carolina.svg",
                     "mapUrl": "http://maps.coastalresilience.org/southcarolina",
                     "mapCenter": [33.9, -79],
                     "mapZoom": 6

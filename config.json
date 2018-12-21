@@ -52,7 +52,7 @@
                     "title": "Grenada, St. Vincent, and the Grenadines",
                     "description": "Demonstrating that governments and communities of small island states can enhance their resilience to climate change by protecting, restoring and effectively managing their marine and coastal ecosystems and strengthening local capacity for adaptation",
                     "image": "grenada.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/gsvg/",
+                    "mapUrl": "https://maps.coastalresilience.org/gsvg/",
                     "mapCenter": [12.83, -61.04],
                     "mapZoom": 6
                 },
@@ -68,7 +68,7 @@
                     "title": "U.S Virgin Islands",
                     "description": "In the US Virgin Islands, high resolution satellite imagery and GIS-based models are being used to identify and prioritize high risk and vulnerable coastal and marine sites subject to the effects of sea level rise, increasing storm surge and intensity, and altered precipitation patterns. The impacts of future SLR and storm surge scenarios are being validated by incorporating community perception, knowledge and historic events as a baseline to better understand how ecosystem-based adaptation solutions can help increase people and nature’s resilience to these impacts.",
                     "image": "virgin-islands.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/usvi/",
+                    "mapUrl": "https://maps.coastalresilience.org/usvi/",
                     "mapCenter": [17.72, -64.78],
                     "mapZoom": 6
                 }
@@ -103,7 +103,7 @@
                     "title": "Mesoamerican Reef",
                     "description": "The Mesomerican Reef supports multi-billion dollar tourism and fisheries industries, key income for Mexico, Belize, Guatemala and Honduras. Two million people live along the coast, rapidly developing despite being threatened by tropical storms and sea level rise. Partners in this Coastal Resilience project are working with governments, real state developers, tourism and fisheries sectors to adopt practices that better conserves natural coastlines while reducing people´s vulnerability to climate events.",
                     "image": "mesomerican-reef.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/mar",
+                    "mapUrl": "https://maps.coastalresilience.org/mar",
                     "mapCenter": [17.41, -86.75],
                     "mapZoom": 6
                 }
@@ -120,7 +120,7 @@
                     "title": "California",
                     "description": "Helping California’s coastal communities plan for resilience in the face of sea level rise",
                     "image": "california.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/california",
+                    "mapUrl": "https://maps.coastalresilience.org/california",
                     "mapCenter": [35.23, -119.34],
                     "mapZoom": 6
                 },
@@ -128,7 +128,7 @@
                     "title": "Connecticut",
                     "description": "Visualizing coastal impacts, planning wisely for the future, taking action today",
                     "image": "connecticut-new-york.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/connecticut",
+                    "mapUrl": "https://maps.coastalresilience.org/connecticut",
                     "mapCenter": [41.18, -72.82],
                     "mapZoom": 6
                 },
@@ -136,7 +136,7 @@
                     "title": "Georgia",
                     "description": "Identifying nature-based solutions for reducing risk in coastal communities",
                     "image": "georgia.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/georgia",
+                    "mapUrl": "httsp://maps.coastalresilience.org/georgia",
                     "mapCenter": [30.9, -81.5],
                     "mapZoom": 6
                 },
@@ -144,7 +144,7 @@
                     "title": "Gulf of Mexico",
                     "description": "With its high incidence of storms and hurricanes and valuable ecological and economic resources, the Gulf region is a high-risk area with great potential to demonstrate natural risk reduction solutions. The Coastal Resilience approach and tools have been applied Gulf-wide and at specific sites, including those that help identify where to implement oyster reef restoration to meet social and ecological goals. Oyster restoration demonstration projects with partners like the National Oceanic and Atmospheric Administration (NOAA) and Army Corps of Engineers (ACOE) creates a strong base for replication and scaling-up to larger projects.",
                     "image": "gulf-of-mexico.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/gulfmex",
+                    "mapUrl": "https://maps.coastalresilience.org/gulfmex",
                     "mapCenter": [29, -93.34],
                     "mapZoom": 6
                 },
@@ -152,7 +152,7 @@
                     "title": "Hawaii",
                     "description": "",
                     "image": "hawaii.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/hawaii",
+                    "mapUrl": "https://maps.coastalresilience.org/hawaii",
                     "mapCenter": [19.5, -156],
                     "mapZoom": 6
                 },
@@ -160,7 +160,7 @@
                     "title": "Maine",
                     "description": "Coastal Resilience is a web mapping tool that allows you to examine nature’s role in reducing coastal risks and opportunities for habitat conservation in Maine",
                     "image": "maine.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/maine",
+                    "mapUrl": "https://maps.coastalresilience.org/maine",
                     "mapCenter": [44.5, -69],
                     "mapZoom": 6
                 },
@@ -168,7 +168,7 @@
                     "title": "New Jersey",
                     "description": "Using natural infrastructure to build resiliency in New Jersey’s coastal communities",
                     "image": "new-jersey.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/newjersey",
+                    "mapUrl": "https://maps.coastalresilience.org/newjersey",
                     "mapCenter": [39.95, -74.40],
                     "mapZoom": 6
                 },
@@ -176,7 +176,7 @@
                     "title": "New York",
                     "description": "Providing New York with the right tools, information and resources to help reduce community vulnerability, plan responsibly, and protect natural resources.",
                     "image": "connecticut-new-york.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/newyork",
+                    "mapUrl": "https://maps.coastalresilience.org/newyork",
                     "mapCenter": [40.6, -73.4],
                     "mapZoom": 6
                 },
@@ -184,7 +184,7 @@
                     "title": "North Carolina",
                     "description": "Identifying nature-based solutions for reducing risk in coastal communities",
                     "image": "north-carolina.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/northcarolina",
+                    "mapUrl": "https://maps.coastalresilience.org/northcarolina",
                     "mapCenter": [34.5, -78],
                     "mapZoom": 6
                 },
@@ -192,7 +192,7 @@
                     "title": "South Carolina",
                     "description": "Identifying nature-based solutions for reducing risk in coastal communities",
                     "image": "south-carolina.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/southcarolina",
+                    "mapUrl": "https://maps.coastalresilience.org/southcarolina",
                     "mapCenter": [33.9, -79],
                     "mapZoom": 6
                 },
@@ -200,7 +200,7 @@
                     "title": "Southeast Florida",
                     "description": "Restoring natural areas so they can protect vulnerable island communities",
                     "image": "florida.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/seflorida",
+                    "mapUrl": "https://maps.coastalresilience.org/seflorida",
                     "mapCenter": [25.85, -80.85],
                     "mapZoom": 6
                 },
@@ -208,7 +208,7 @@
                     "title": "Virginia",
                     "description": "Coastal Resilience is a decision-support tool that incorporates the best available science and local data to enable communities to visualize the risks imposed by sea-level rise and storm surge on the people, economy, and coastal habitats of the Eastern Shore and identify nature-based solutions for enhancing resilience and reducing risks where possible",
                     "image": "virginia.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/virginia",
+                    "mapUrl": "https://maps.coastalresilience.org/virginia",
                     "mapCenter": [37.5, -75.8],
                     "mapZoom": 6
                 },
@@ -216,7 +216,7 @@
                     "title": "Washington",
                     "description": "With the Coastal Resilience/Floodplains by Design decision support tools, users can explore data and spatial analysis results for the rivers and shorelines of Washington from Puget Sound to the Outer Coast. These tools provide managers and planners mechanisms to explore the role of natural habitat in risk reduction along marine and fresh water shorelines to inform local restoration projects and development planning.",
                     "image": "washington.svg",
-                    "mapUrl": "http://maps.coastalresilience.org/pugetsound",
+                    "mapUrl": "https://maps.coastalresilience.org/washington",
                     "mapCenter": [47.89, -122.47],
                     "mapZoom": 6
                 }

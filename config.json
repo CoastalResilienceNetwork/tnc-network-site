@@ -5,11 +5,11 @@
     "baseMapTilesMaxZoom": 18,
     "baseMapTilesUrl": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
     "baseMapTilesAttribution": "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community",
-    "regionLayerUrl": "https://services2.coastalresilience.org/arcgis/rest/services/Network/Sites/MapServer",
+    "regionLayerUrl": "http://services.coastalresilience.org:6080/arcgis/rest/services/Network/Sites/MapServer",
     "regionLayerOpacity": 0.8,
     "regionList": [
         {
-            "title": "Australia"
+            "title": "Australia",
             "description": "The nation’s high level of biodiversity classifies it as one of 17 of the ‘megadiversity’ countries in the world, holding roughly two thirds of the world’s biodiversity. Climate adaptation strategies in Australia focus largely on coastal habitat restoration.",
             "image": "australia.svg",
             "mapCenter": [-30.00, 130.00],

@@ -5,7 +5,7 @@
     "baseMapTilesMaxZoom": 18,
     "baseMapTilesUrl": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
     "baseMapTilesAttribution": "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community",
-    "regionLayerUrl": "https://services.coastalresilience.org/arcgis/rest/services/Network/Sites/MapServer",
+    "regionLayerUrl": "https://services2.coastalresilience.org/arcgis/rest/services/Network/Sites/MapServer",
     "regionLayerOpacity": 0.8,
     "regionList": [
         {

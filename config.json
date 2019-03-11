@@ -19,7 +19,7 @@
                     "title": "Victoria",
                     "description": "The temperate southern coast of Australia is home to hundreds of bays and estuaries containing important habitats like shellfish reefs, mangrove forests, seagrass beds and saltmarshes. The Nature Conservancy Australia is working to repair these coastal habitats and restore their critical natural services with a current focus on shellfish reef restoration.",
                     "image": "victoria-australia.svg",
-                    "mapUrl": "http://coastalresilience.org/project/victoria-australia/",
+                    "mapUrl": "https://maps.coastalresilience.org/australia/",
                     "mapCenter": [-37.81, 144.96],
                     "mapZoom": 6
                 },
@@ -27,7 +27,7 @@
                     "title": "Western Australia",
                     "description": "Restoration of marine habitats in the Peel region of Western Australia begins with outreach and data collection in order to visualize and prioritize efforts to protect valuable mangroves, salt marches, seagrasses, and shellfish reefs. This project in the Peel-Harvey estuary launches in March, 2018, with a series of workshops on different approaches to restore these marine habitats.",
                     "image": "western-australia.svg",
-                    "mapUrl": "http://coastalresilience.org/project/western-australia/",
+                    "mapUrl": "https://maps.coastalresilience.org/australia/",
                     "mapCenter": [-31.95, 115.86],
                     "mapZoom": 6
                 }

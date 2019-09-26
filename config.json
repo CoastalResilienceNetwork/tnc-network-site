@@ -176,7 +176,7 @@
                     "title": "New York",
                     "description": "Providing New York with the right tools, information and resources to help reduce community vulnerability, plan responsibly, and protect natural resources.",
                     "image": "connecticut-new-york.svg",
-                    "mapUrl": "https://maps.coastalresilience.org/newyork",
+                    "mapUrl": "https://maps.naturalresourcenavigator.org/",
                     "mapCenter": [40.6, -73.4],
                     "mapZoom": 6
                 },

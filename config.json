@@ -60,7 +60,7 @@
                     "title": "Jamaica",
                     "description": "The Small Island Developing States (SIDS) of the Caribbean are among the world’s most vulnerable to the impacts of climate change. While these losses are expected to grow, ecosystem-based adaptation can significantly reduce risk and avert economic losses. This project, a collaboration between TNC and IFRC, launches in January, 2018.",
                     "image": "jamaica.svg",
-                    "mapUrl": "http://coastalresilience.org/project/jamaica/",
+                    "mapUrl": "https://maps.coastalresilience.org/jamaica/",
                     "mapCenter": [18.10, -77.29],
                     "mapZoom": 6
                 },

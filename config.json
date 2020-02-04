@@ -136,7 +136,7 @@
                     "title": "Georgia",
                     "description": "Identifying nature-based solutions for reducing risk in coastal communities",
                     "image": "georgia.svg",
-                    "mapUrl": "httsp://maps.coastalresilience.org/georgia",
+                    "mapUrl": "https://maps.coastalresilience.org/georgia",
                     "mapCenter": [30.9, -81.5],
                     "mapZoom": 6
                 },

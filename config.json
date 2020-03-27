@@ -85,7 +85,7 @@
                     "title": "Semarang, Java",
                     "description": "The goal of the Resilient Coastal Cities project in Semarang is to enhance local collaboration and problem solving to support effective climate change adaption.",
                     "image": "java-indonesia.svg",
-                    "mapUrl": "http://coastalresilience.org/project/indonesia/",
+                    "mapUrl": "https://maps.coastalresilience.org/resilient-coastal-cities/#mapPanel",
                     "mapCenter": [-7.00, 110.50],
                     "mapZoom": 6
                 }
